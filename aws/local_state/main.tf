@@ -21,4 +21,15 @@ resource "aws_instance" "app_server" {
     Name = "Terraform_Demo"
   }
 }
+provider "aws" {
+  region  = "ap-southeast-1"
+}
 
+resource "aws_instance" "app_server" {
+  ami           = "ami-830c94e3"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "My_Practice_Terraform"
+  }
+}
